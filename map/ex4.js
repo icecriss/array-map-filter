@@ -52,9 +52,19 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
 */
 
 function getCirclesProperties(radiuses) {
+  return radiuses.map(function (circle) {
+    return circle = {
+      radius: circle,
+      circumference: (2 * Math.PI * circle).toFixed(3),
+      surface: (Math.PI * circle * circle).toFixed(3)
+    }
+  });
 }
 
 
+// Formules pour les calculs :
+// * Ciconférence  =  2 * Pi * rayon
+// * Diamètre      =  Pi * rayon * rayon
 
 // Ne pas modifier l'export
 module.exports = getCirclesProperties;

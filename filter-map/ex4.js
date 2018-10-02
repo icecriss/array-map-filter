@@ -63,7 +63,24 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 
 */
 
+// function filterOffensiveComments(comments, bannedWords) {
+//   return comments.filter((comment) => {
+//     return (!(bannedWords.map(bw => comment.toLowerCase().includes(bw))).includes(true));
+//   })
+// }
+
+
 function getActivitiesMembers(activities, persons) {
+  return activities.map(function (activite) {
+    return {
+      activity: activite,
+      persons: persons.map(function (element) {
+        return element.activities.filter(function (e) {
+          return e === activite;
+        });
+      })
+    }
+  })
 }
 
 

@@ -21,7 +21,11 @@ En sortie: [
 
  */
 
+
 function getStringsLength(strings) {
+  return strings.map(function (string) {
+    return `${string} contains ${string.length} characters`;
+  });
 }
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
@@ -30,3 +34,4 @@ function getStringsLength(strings) {
 
 // Ne pas modifier l'export
 module.exports = getStringsLength;
+
