@@ -69,15 +69,14 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 //   })
 // }
 
-
 function getActivitiesMembers(activities, persons) {
   return activities.map(function (activite) {
     return {
       activity: activite,
-      persons: persons.map(function (element) {
-        return element.activities.filter(function (e) {
-          return e === activite;
-        });
+      persons: persons.filter(function (person) {
+        return person.activities.includes(activite)
+      }).map(function (pax) {
+        return pax.name
       })
     }
   })
